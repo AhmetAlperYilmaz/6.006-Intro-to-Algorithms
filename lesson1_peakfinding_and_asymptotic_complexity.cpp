@@ -21,12 +21,12 @@ void peak_finder_1D(int* arr, int size_N)
         }
         else if( arr[mid] < arr[mid - 1])  // checking if left is greater than right
         {
-            end = mid + 1;  // if it is, updating right pointer
+            end = mid;  // if it is, updating right pointer
         }
 
         else if( arr[mid] < arr[mid + 1])  // checking if right is greater than left
         {
-            start = mid - 1;  // if it is, updating left pointer
+            start = mid;  // if it is, updating left pointer
         }
 
         else
@@ -67,14 +67,14 @@ void peak_finder_2D(int arr[][SIZE_M], int size_N, int size_M, int mid)
         
         else if( arr[x][mid] < arr[x][mid-1] )  // checking if left is greater than right
         {
-            end = mid + 1;  // if it is, updating right pointer
+            end = mid;  // if it is, updating right pointer
             mid = (end + start) / 2;
             return peak_finder_2D(arr, size_N, size_M, mid);
         }
 
         else if( arr[x][mid] < arr[x][mid+1] )  // checking if right is greater than left
         {
-            start = mid - 1;  // if it is, updating left pointer
+            start = mid;  // if it is, updating left pointer
             mid = (end + start) / 2;
             return peak_finder_2D(arr, size_N, size_M, mid);
         }
