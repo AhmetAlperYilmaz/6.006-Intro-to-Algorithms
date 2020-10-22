@@ -1,5 +1,6 @@
 #ifndef LESSON6
 #include <iostream>
+#include <algorithm>
 
 class AVL {
     private:

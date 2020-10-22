@@ -20,11 +20,11 @@ void AVL::insert_node(int number, AVL * node){
     }
     else if (number < node->get_value()) 
     {
-        node->get_left() = insert_node(number, node->get_left());
+        insert_node(number, node->get_left());
     } 
     else if (number >= node->get_value()) 
     {
-        node->get_right() = insert_node(number, node->get_right());
+        insert_node(number, node->get_right());
     }
 }
 
@@ -32,9 +32,9 @@ int AVL::height_of_a_node(AVL * node){
     int height = 0;
     if (node != NULL) 
     {
-        int left_node_height = height(node->get_left());
-        int right_node_height = height(node->get_right());
-        int max_height = max(left_node_height, right_node_height);
+        int left_node_height = height_of_a_node(node->get_left());
+        int right_node_height = height_of_a_node(node->get_right());
+        int max_height = std::max(left_node_height, right_node_height);
         height = max_height + 1;
     }
     return height;
